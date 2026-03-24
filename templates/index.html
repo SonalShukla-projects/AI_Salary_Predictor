@@ -3,60 +3,27 @@
 <head>
     <title>AI Salary Predictor</title>
     <style>
-        body {
-            font-family: Arial;
-            background: linear-gradient(135deg, #B0E4CC, #6d6773);
-            text-align: center;
-            color: white;
-            padding: 50px;
-        }
-
-        .container {
-            background: white;
-            color: black;
-            padding: 30px;
-            border-radius: 10px;
-            width: 300px;
-            margin: auto;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        }
-
-        input {
-            padding: 10px;
-            width: 80%;
-            margin: 10px 0;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: #091413;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background: #285A48;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
+        body{font-family:Arial;text-align:center;color:white;padding:50px;
+            background:linear-gradient(135deg,#B0E4CC,#6d6773);}
+        .container{background:white;color:black;padding:20px;border-radius:10px;width:300px;margin:auto;}
+        input,select,button{padding:8px;width:80%;margin:10px 0;border-radius:5px;}
+        button{background:#091413;color:white;border:none;cursor:pointer;}
+        button:hover{background:#285A48;}
     </style>
 </head>
-
 <body>
-    <h1>💼 AI Salary Predictor</h1>
-
+    <h1>💼 AI Salary Predictor 🤖</h1>
     <div class="container">
         <form action="/predict" method="post">
-            <h2>Enter Experience (Years)</h2>
-            <input type="number" name="experience" step="0.1" required>
+            <input type="number" name="experience" step="0.1" placeholder="Years of Experience" required>
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="ML Engineer">ML Engineer</option>
+            </select>
             <br>
-            <button type="submit">Predict Salary</button>
+            <button type="submit">💰 Predict Salary</button>
         </form>
-
         <h3>{{ prediction_text }}</h3>
     </div>
 </body>
